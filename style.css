@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-image: url("/freepik_assistant_1752513289891.png");
+    background-image: url("freepik_assistant_1752513289891.png");
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,7 @@ h1 {
 }
 
 form {
-    background-color: #7ea5db;
+    background-color: #cad9eb;
     padding: 45px;
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
@@ -106,7 +106,7 @@ button {
     padding: 16px 30px;
     border: none;
     border-radius: 8px;
-    cursor: pointer;
+    cursor: no-drop;
     font-size: 1.2em;
     font-weight: 700;
     width: 100%;
@@ -136,6 +136,10 @@ button:hover {
 .user-info{
    display: none;
    
+}
+
+p{
+    font-weight: 500;
 }
 
 
