@@ -161,6 +161,7 @@ function verificarTodo() {
         btn.style.color ="#f0fdf4"
         btn.style.cursor = "pointer";
         
+        
     } else {
         btn.style.backgroundColor = "#cccccc";
        

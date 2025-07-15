@@ -137,6 +137,21 @@ p{
     font-weight: 500;
 }
 
+#creador{
+    color: #fff0f1;
+    text-decoration: none;
+    font-weight: 700;
+   
+}
+
+img{
+    margin-top: -16px;
+    position: absolute;
+}
+
+footer{
+    margin-top: 20px;
+}
 
 
 
