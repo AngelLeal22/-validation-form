@@ -30,7 +30,8 @@ Este proyecto implementa un formulario de registro con validaciones en tiempo re
 
 ## Previsualización
 
-![WhatsApp Image 2025-07-14 at 2 41 26 PM](https://github.com/user-attachments/assets/68f0f273-5ef8-4601-9bdf-c61b3d03286f)
+
+<img width="1918" height="862" alt="image" src="https://github.com/user-attachments/assets/ae0e3c01-32ed-4eff-b9cf-40d473bd44a4" />
 
 
 
