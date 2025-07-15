@@ -101,25 +101,20 @@ p {
 }
 
 button {
-    background-color: #012954;
-    color: rgb(255, 255, 255);
+    
+    color: rgb(15, 15, 15);
     padding: 16px 30px;
     border: none;
     border-radius: 8px;
-    cursor: no-drop;
     font-size: 1.2em;
     font-weight: 700;
     width: 100%;
+    cursor:  no-drop;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     letter-spacing: 0.8px;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.756);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.295);
 }
 
-button:hover {
-    background-color: #036cdcfd;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
-}
 
 .isValidate {
     border-color: #28a745;
@@ -129,7 +124,7 @@ button:hover {
 
 .notValidate {
     border-color: #de1b2e;
-    box-shadow: 0 0 0 4px rgba(220, 53, 70, 0.856);
+    box-shadow: 0 0 0 4px rgb(220, 53, 70);
     background-color: #fff0f1;
 }
 
@@ -141,6 +136,8 @@ button:hover {
 p{
     font-weight: 500;
 }
+
+
 
 
 

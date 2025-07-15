@@ -6,6 +6,7 @@ let phoneNumber = document.querySelector("#phone-number");
 let phonecode = document.querySelector("#phone-code");
 let passWord = document.querySelector("#password");
 let confirmPas = document.querySelector("#confirm-password");
+let btn = document.querySelector("#btn")
 
 //RegEx  Expresiones regulares, patrones de busqueda para cadenas de texto
 
@@ -28,6 +29,11 @@ arrayCountries.forEach((country) => {
 //split divide una cadena en subcadenas usando un separador en especifico
 
 
+let usernameValidation = false
+let emailValidation = false
+let phoneNumbervalidation = false
+let passWordvalidation = false
+let countriesValidation = false
 
 
 
@@ -37,30 +43,52 @@ arrayCountries.forEach((country) => {
 
 
 username.addEventListener("input", (e) => {
-    let info = e.target.parentElement.children[2];
-    validation(e, userRegex, username, info);
+  let info = e.target.parentElement.children[2];
+  usernameValidation = validation(e, userRegex, username, info);
+ verificarTodo()
+  
+   
+  
+
 });
 
 email.addEventListener("input", (e) => {
     let info = e.target.parentElement.children[2];
-    validation(e, emailRegex, email, info);
+    emailValidation = validation(e, emailRegex, email, info);
+   verificarTodo()
+    
+    
 });
 
 countries.addEventListener("change", function () {
   codeNumber = this.value;
   phonecode.innerHTML = `+${codeNumber}`;
+   countriesValidation = this.value !== "Seleccione un Pais"
+ verificarTodo()
+  
+   
+  
 });
 
 phoneNumber.addEventListener("input", (e) => {
     let info = e.target.parentElement.children[2];
-  validation(e, phonenumberRegex, phoneNumber, info);
-  console.log(e.target.parentElement);
+  phoneNumbervalidation= validation(e, phonenumberRegex, phoneNumber, info);
+  verificarTodo()
+  
+
 });
 
 passWord.addEventListener("input", (e) => {
     let info = e.target.parentElement.children[2];
-  validation(e, passwordRegex, passWord, info);
+   passWordvalidation = validation(e, passwordRegex, passWord, info);
+  verificarTodo()
+  
+ 
 });
+
+
+
+
 
 
 // funcion para validar
@@ -70,38 +98,73 @@ function validation(e, regex, selector, info) {
     let validate = regex.test(inputValue); // 4 para validar es .test()// devuelve valor
     
     if (validate) {
-        selector.classList.remove("notValidate");
-        selector.classList.add("isValidate");
-        
-        info.classList.add("user-info");
-        
-        //informacion de mensaje
-  } else {
-    selector.classList.add("notValidate");
-    info.classList.remove("user-info");
-}
-}
-
-//funcion para validar  password
-
-confirmPas.addEventListener("input", (e) => {
+      selector.classList.remove("notValidate");
+      selector.classList.add("isValidate");
+      
+      info.classList.add("user-info");
+      
+      //informacion de mensaje
+    } else {
+      selector.classList.add("notValidate");
+      info.classList.remove("user-info");
+    }
+    return validate;
+  }
+  
+  //funcion para validar  password
+  
+  confirmPas.addEventListener("input", (e) => {
     let info = e.target.parentElement.children[2];
     const passWordv= passWord.value
     const confirpass = confirmPas.value
     
+    
+    
     //validation(e, passwordRegex, passWord, confirmPas);
-
+    
     const isValid = passwordRegex.test(confirpass);
-
-  if (isValid && confirpass === passWordv) {
-    confirmPas.classList.add("isValidate");
-    confirmPas.classList.remove("notValidate");
-     info.classList.add("user-info");
-  } else {
+    
+    if (isValid && confirpass === passWordv) {
+      confirmPas.classList.add("isValidate");
+      confirmPas.classList.remove("notValidate");
+      info.classList.add("user-info");
+    } else {
       confirmPas.classList.add("notValidate");
       confirmPas.classList.remove("isValidate");
-    info.classList.remove("user-info");
-  }
-});
+      info.classList.remove("user-info");
+    
+    }
+   verificarTodo()
+   
+  });
+  
 
 
+  
+// Función para verificar todas las validaciones y activar/desactivar el botón
+function verificarTodo() {
+    // Verificamos que todos los campos estén validados
+    const todo = usernameValidation && 
+                    emailValidation && 
+                    phoneNumbervalidation && 
+                    passWordvalidation && 
+                    confirmPas.classList.contains("isValidate") && 
+                    countriesValidation;
+    
+    
+    // Habilitamos o deshabilitamos el botón según las validaciones
+    btn.disabled = !todo;
+    
+    // Cambiamos el estilo del botón según si está habilitado o no
+    if (todo) {
+        btn.style.backgroundColor = "#235396";
+        btn.style.color ="#f0fdf4"
+        btn.style.cursor = "pointer";
+        
+    } else {
+        btn.style.backgroundColor = "#cccccc";
+       
+    }
+}
+  
+ 
